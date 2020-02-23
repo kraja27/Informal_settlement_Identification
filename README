@@ -1,0 +1,26 @@
+# Problem Statement
+
+Informal settlements are home to the most socially and economically vulnerable people on the planet. In order to deliver effective economic and social aid, non-government organizations (NGOs), such as the United Nations Children’s Fund (UNICEF), require detailed maps of the locations of informal settlements.
+New Light Technologies hired us to predict informal settlements through web-scraping of real-estate data. While original scope of the project was to build a web scraper to house and apartment adverts for a selected city we found that there is no standadization of real estate across Africa/Latin America/Middle East. We limited our scope to Brazil.
+
+The project will attempt to test the feasibility of estimating informal tenure from this information.
+
+We will be using __Accuracy__ as a metric to test the model. 
+We will be using a __classification__ model to __predict__ and a __regression__ model to __intrepret__ the findings.  
+
+# Executive Summary
+
+This project is being developed for New Light Technologies  a small, award-winning organization based in Washington, D.C. that provides solutions to government, commercial, and non-profit clients. The main objective of this project is to Improve Slum Area Identification through Real-Estate Data. We found during research that around 25% of the world's urban population lives in informal settlements, areas that are cut off from basic services and city infrastructure. Mapping these locations can dramatically help aid and non-government organizations better serve those in need. Our team intent to develope a machine learning-based tool that can automatically classify informal settlements using freely available population density data, real estate listing, satellite and aerial imagery. Our first strategy is to finalize a good data source forbuild a web scraper to house and apartment adverts for a selected city in Africa/Latin America/Middle East. 
+We used Geo processing for extracting the data related to census data from few cities from Barzil (Viz. Sao Paulo). The Geo processing helped us download the census data and real estate adverts in the selected city for about 3 years.  Using gridded population estimates, we calculated the ratio of real estate adverts with population density. We used this ratio as one of the x values for our machine learning models which helped  us with  mapping informal settlements. EDA helped us in choosing the X values those seemed to be having more correlation in identifying the slum area. 
+
+Machines had no problem understanding the real estat data, after the initial EDA.
+
+Source : https://www.habitatireland.ie/2018/01/1-billion-people-live-slums/
+
+## Conclusion
+
+With help of availabel data from Kaggle, public real estate data and population mapped to cesnsus tracts I was able to predict informal settlements in Sao Paulo. During the modeling process we found that few features have high (Positive and Negative) coffecients with the presence of a informal settlements. __Apartment listing distance__ was a great indicator in our models. One of the __unusual findings__ is that the __price__ of real estate listings and __quantity__ of the listings didn't have much impact.
+
+One of the limitation I found in our best performing model the Extra Tree Modelis that the Train and Test scores always performed much better than the cross val score on the original dataset. Even after trying with different Random State I couldn't improve the Cross Val scores on the Original data set. This needs further investigation. 
+
+This model with data from public real estate data and population mapped to cesnsus tracts can be used in other cities if we can get an accurate data from the respective agencies. The model would be best fit for North and South American countries.  
